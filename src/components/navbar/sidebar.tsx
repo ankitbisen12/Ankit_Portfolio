@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { spaceGrotesk } from "../../app/fonts";
 import { CornerDownLeftIcon } from 'lucide-react';
 import { SidebarProps } from "../../types/helper";
 import { NavLinksProps } from "../../types/helper";
@@ -33,7 +32,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
       />
       <aside
         className={`fixed left-0 top-0 z-50 h-full w-72 bg-zinc-950 border-r border-white/10 transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"
-          }  ${spaceGrotesk.className}`}
+          }`}
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
           <span className="text-white font-semibold text-xl">Ankit Bisen .</span>

@@ -1,6 +1,5 @@
 'use client';
 
-import { spaceGrotesk } from "@/app/fonts";
 import { FooterSocailLinks } from "../footer/footer"
 import Button from "../common/button";
 import { MoveRight } from 'lucide-react';
@@ -21,7 +20,7 @@ const Intro = () => {
                             />
                         </div>
                     </div>
-                    <div className={`space-y-4 text-center ${spaceGrotesk.className}`}>
+                    <div className="space-y-4 text-center">
                         <p className="text-3xl lg:text-5xl font-bold text-white">
                             Hey, It's{' '}
                             <span className="bg-gradient-to-r from-purple-500 to-teal-400 bg-clip-text text-transparent">

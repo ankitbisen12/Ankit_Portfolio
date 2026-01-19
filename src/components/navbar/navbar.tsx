@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { spaceGrotesk } from "../../app/fonts";
 import Sidebar from "./sidebar";
 
 const Navbar = () => {
@@ -10,7 +9,7 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <nav className={`w-full bg-black px-2 lg:px-6 py-4 ${spaceGrotesk.className} border-b border-white/10`}>
+      <nav className="w-full bg-black px-2 lg:px-6 py-4 border-b border-white/10">
         <div className="mx-auto flex  items-center justify-between">
           <div className="flex items-center gap-2 lg:gap-4">
             <HiMenuAlt2 className="text-white w-7 h-7 cursor-pointer" onClick={() => setOpen(true)} />
@@ -29,7 +28,6 @@ const Navbar = () => {
           </a>
         </div>
       </nav>
-
       <Sidebar open={open} setOpen={setOpen} />
     </React.Fragment>
   );

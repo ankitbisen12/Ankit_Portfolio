@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { Mail, Linkedin } from 'lucide-react';
-import { spaceGrotesk } from "@/app/fonts";
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/button";
 import { Download, SendHorizonal } from 'lucide-react';
 
 const Contact = () => {
     return (
-        <section className={`bg-black flex items-center justify-center px-4 py-20 ${spaceGrotesk.className}`}>
+        <section className="bg-black flex items-center justify-center px-4 py-20">
             <div className="max-w-4xl w-full">
                 <SectionHeader title="Contact" subTitle="Get In Touch" />
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

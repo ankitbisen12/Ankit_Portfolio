@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { spaceGrotesk } from "../app/fonts";
 
 export const metadata: Metadata = {
   title: "Ankit Portfolio",
@@ -20,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >
+    <html lang="en" className={spaceGrotesk.className}>
+      <body>
         {children}
       </body>
     </html>

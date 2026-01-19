@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { socialLinks } from "@/constants";
-import { spaceGrotesk } from "@/app/fonts";
 import { SocialLinkProps } from "@/types/helper";
 
 export const FooterSocailLinks = ({ size, extraStyle }: { size: number, extraStyle?: string }) => {
@@ -27,7 +26,7 @@ export const FooterSocailLinks = ({ size, extraStyle }: { size: number, extraSty
 
 const Footer = () => {
     return (
-        <footer className={`w-full border-t border-gray-900 bg-black ${spaceGrotesk.className}`}>
+        <footer className="w-full border-t border-gray-900 bg-black">
             <div className="mx-auto max-w-7xl p-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="text-center sm:text-left">
