@@ -1,14 +1,4 @@
-import React from 'react';
-import { IoIosArrowRoundForward } from "react-icons/io";
-
-interface ButtonProps {
-  textColor: string;
-  content: string;
-  bgColor?: string;
-  icon?: React.ReactNode;
-  animation?: string;
-  extraStyle?: string;
-}
+import { ButtonProps } from '../../types/helper';
 
 const Button = ({ bgColor, textColor, icon, animation, content, extraStyle }: ButtonProps) => {
   return (

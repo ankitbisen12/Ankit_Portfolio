@@ -3,7 +3,9 @@
 import { spaceGrotesk } from "@/app/fonts";
 import { FooterSocailLinks } from "../footer/footer"
 import Button from "../common/button";
-import { Move, MoveRight } from 'lucide-react';
+import { MoveRight } from 'lucide-react';
+
+
 const Intro = () => {
     return (
         <section className="pt-20 bg-black flex items-center justify-center px-4 py-8 lg:min-h-screen lg:pt-0 ">

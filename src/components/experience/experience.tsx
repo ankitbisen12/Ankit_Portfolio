@@ -1,6 +1,5 @@
 'use client';
 
-import React from "react";
 import SectionHeader from "../common/SectionHeader";
 import { companies } from "../../constants";
 import { spaceGrotesk } from "../../app/fonts";

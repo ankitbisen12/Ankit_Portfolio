@@ -1,9 +1,4 @@
-import React from 'react';
-
-interface SkillCardProps {
-    title: string;
-    skills: string[];
-}
+import { SkillCardProps } from "../../types/helper";
 
 const SkillCard = ({ title, skills }: SkillCardProps) => {
     return (

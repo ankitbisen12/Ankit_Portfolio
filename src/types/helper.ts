@@ -11,6 +11,11 @@ export interface NavLinksProps {
   scrollToSection: (id: string) => void;
 }
 
+export interface SectionHeaderProps {
+    title: string;
+    subTitle: string;
+}
+
 export interface SocialLinkProps {
     name: string;
     url: string;
@@ -24,4 +29,18 @@ export interface projectProps {
     preview: string;
     skills: string[];
     path: any;
+}
+
+export interface ButtonProps {
+  textColor: string;
+  content: string;
+  bgColor?: string;
+  icon?: React.ReactNode;
+  animation?: string;
+  extraStyle?: string;
+}
+
+export interface SkillCardProps {
+    title: string;
+    skills: string[];
 }

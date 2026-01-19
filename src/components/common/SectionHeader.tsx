@@ -1,9 +1,4 @@
-import React from 'react';
-
-interface SectionHeaderProps {
-    title: string;
-    subTitle: string;
-}
+import { SectionHeaderProps } from '../../types/helper';
 
 const SectionHeader = ({ title, subTitle }: SectionHeaderProps) => {
     return (
