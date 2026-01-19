@@ -1,28 +1,6 @@
 'use client';
 
-import React from "react";
-import Link from "next/link";
-import { socialLinks } from "@/constants";
-import { SocialLinkProps } from "@/types/helper";
-
-export const FooterSocailLinks = ({ size, extraStyle }: { size: number, extraStyle?: string }) => {
-    return (
-        <React.Fragment>
-            {socialLinks.map(({ name, url, icon: Icon }: SocialLinkProps) => (
-                <Link
-                    key={name}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={name}
-                    className={`text-gray-400 transition ${extraStyle} hover:scale-110 hover:text-purple-500 `}
-                >
-                    <Icon size={size} />
-                </Link>
-            ))}
-        </React.Fragment>
-    )
-}
+import SocialLinks from "../common/SocialLinks";
 
 const Footer = () => {
     return (
@@ -38,7 +16,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="flex items-center justify-center gap-5 sm:justify-end">
-                        <FooterSocailLinks size={20} />
+                        <SocialLinks size={20} />
                     </div>
                 </div>
             </div>

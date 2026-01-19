@@ -1,10 +1,10 @@
 'use client';
 
-import Link from "next/link";
 import { Mail, Linkedin } from 'lucide-react';
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/button";
 import { Download, SendHorizonal } from 'lucide-react';
+import Card from "../common/Card";
 
 const Contact = () => {
     return (
@@ -13,7 +13,7 @@ const Contact = () => {
                 <SectionHeader title="Contact" subTitle="Get In Touch" />
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="space-y-8 lg:col-span-1">
-                        <div className="bg-black/50 rounded-2xl p-6 border border-gray-900 hover:border-purple-900">
+                        <Card bgColor='bg-black/50' >
                             <h3 className="text-xl font-semibold text-white mb-4">
                                 Contact Info.
                             </h3>
@@ -22,18 +22,18 @@ const Contact = () => {
                             </p>
 
                             <div className="py-4 space-y-2">
-                                <Link href="" className="flex items-center gap-2 text-gray-300 text-sm text-gray-400 font-semibold">
+                                <span className="flex items-center gap-2 text-gray-300 text-sm text-gray-400 font-semibold">
                                     <Mail size={18} className="text-purple-500" />
                                     ankitbisen751@gmail.com
-                                </Link>
-                                <div className="flex items-center gap-2 text-gray-300 text-sm text-gray-400 font-semibold">
+                                </span>
+                                <span className="flex items-center gap-2 text-gray-300 text-sm text-gray-400 font-semibold">
                                     <Linkedin size={18} className="text-purple-500" />
-                                    linkedin.in/me
-                                </div>
+                                    linkedin.in/ankit-bisen
+                                </span>
                             </div>
-                        </div>
+                        </Card>
 
-                        <div className="bg-gradient-to-br from-[#2b1d3a] via-[#1b152a] to-[#0b0b12] rounded-2xl p-6 border border-gray-800 hover:border-purple-900">
+                        <Card bgColor='bg-gradient-to-br from-[#2b1d3a] via-[#1b152a] to-[#0b0b12]'>
                             <h3 className="text-xl font-semibold text-white mb-6 ">
                                 Looking for a dev?
                             </h3>
@@ -41,7 +41,7 @@ const Contact = () => {
                                 I'm currently available for freelance projects and open to full-time opportunities.
                             </p>
                             <Button bgColor="border border-purple-600" textColor="text-white" content="Download Resume" icon={<Download size={18} />} />
-                        </div>
+                        </Card>
                     </div>
 
                     <div className="bg-black/50 rounded-2xl p-6 border border-gray-900 lg:col-span-2">

@@ -1,8 +1,9 @@
 import { SkillCardProps } from "../../types/helper";
+import Card from "../common/Card";
 
 const SkillCard = ({ title, skills }: SkillCardProps) => {
     return (
-        <div className="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-purple-900">
+        <Card bgColor="bg-gray-900">
             <h3 className="text-2xl font-semibold text-white mb-6">
                 {title}
             </h3>
@@ -14,7 +15,7 @@ const SkillCard = ({ title, skills }: SkillCardProps) => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </Card>
     )
 }
 

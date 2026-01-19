@@ -1,9 +1,8 @@
 'use client';
 
-import { FooterSocailLinks } from "../footer/footer"
 import Button from "../common/button";
 import { MoveRight } from 'lucide-react';
-
+import SocialLinks from "../common/SocialLinks";
 
 const Intro = () => {
     return (
@@ -35,16 +34,15 @@ const Intro = () => {
                             <span className="text-purple-500">1 years</span>.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                        <div className="flex flex-row gap-2 justify-center">
                             <Button bgColor="bg-purple-600" textColor="text-white" animation="shake-vertical" content="View My Work" />
                             <Button textColor="text-white" animation="shake-vertical" content="Contact Me" icon={<MoveRight size={16} />} extraStyle="border border-gray-600 flex items-center justify-center gap-2" />
                         </div>
 
                         <div className="flex gap-2 pt-2 justify-center">
-                            <FooterSocailLinks size={24} extraStyle="p-2 border border-gray-700 rounded-full hover:border-purple-500" />
+                            <SocialLinks size={24} extraStyle="p-2 border border-gray-700 rounded-full hover:border-purple-500" />
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
