@@ -8,7 +8,7 @@ import { NavLinksProps } from "../../types/helper";
 
 const NavLinks = ({ content, href, scrollToSection }: NavLinksProps) => {
   return (
-    <Link href={href} className="block hover:text-white transition" onClick={() => scrollToSection("skills")}>
+    <Link href={href} className="block text-gray-400 font-semibold hover:text-white transition " onClick={() => scrollToSection("skills")}>
       {content}
     </Link>
   )
