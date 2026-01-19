@@ -2,6 +2,7 @@
 
 import SectionHeader from "../common/SectionHeader";
 import { companies } from "../../constants";
+import Tag from "../common/tag";
 
 const Experience = () => {
   return (
@@ -15,7 +16,7 @@ const Experience = () => {
         <div className="space-y-10">
           {companies.map((exp, index) => (
             <div key={index} className="relative pl-10 lg:pl-16">
-              <span className="absolute left-[10px] top-6 h-3 w-3 rounded-full bg-purple-500 ring-4 ring-purple-500/20" />
+              <Tag content={exp.period} />
               <div className="relative rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 p-6 sm:p-8 shadow-lg border border-white/5">
                 <h3 className="text-xl font-semibold text-white">
                   {exp.role}

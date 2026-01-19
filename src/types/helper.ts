@@ -44,3 +44,8 @@ export interface SkillCardProps {
     title: string;
     skills: string[];
 }
+
+
+export interface TagProps {
+    content: string;
+}

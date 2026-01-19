@@ -1,11 +1,12 @@
 'use client';
 
 import Image from "next/image";
-import { projectProps } from "@/types/helper";
+import Link from "next/link";
 import { Github, ExternalLink } from 'lucide-react';
+import { projectProps } from "@/types/helper";
 import { projects } from "@/constants";
 import SectionHeader from "../common/SectionHeader";
-import Link from "next/link";
+import Tag from "../common/tag";
 
 const ProjectCard = ({ project }: { project: projectProps }) => {
     return (
@@ -27,13 +28,8 @@ const ProjectCard = ({ project }: { project: projectProps }) => {
                     {project.description}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                    {project.skills.map((skill, index) => (
-                        <span
-                            key={index}
-                            className="rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs text-purple-400"
-                        >
-                            {skill}
-                        </span>
+                    {project.skills.map((skill) => (
+                        <Tag key={skill} content={skill} />
                     ))}
                 </div>
 
@@ -65,10 +61,10 @@ const Projects = () => {
     return (
         <section className="bg-black py-20">
             <div className="mx-auto max-w-7xl px-6">
-                <SectionHeader title="Projects" subTitle="Featured Projects"/>
+                <SectionHeader title="Projects" subTitle="Featured Projects" />
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
+                    {projects.map((project) => (
+                        <ProjectCard key={project.name} project={project} />
                     ))}
                 </div>
             </div>
