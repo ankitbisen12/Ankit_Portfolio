@@ -1,7 +1,7 @@
 'use client';
 
-import Button from "../common/button";
 import { MoveRight } from 'lucide-react';
+import Button from "../common/button";
 import SocialLinks from "../common/SocialLinks";
 
 const Intro = () => {

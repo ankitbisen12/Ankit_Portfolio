@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { HiMenuAlt2 } from "react-icons/hi";
+import { Logs } from 'lucide-react'
 import Sidebar from "./sidebar";
 
 const Navbar = () => {
@@ -11,8 +11,8 @@ const Navbar = () => {
     <React.Fragment>
       <nav className="w-full bg-black px-2 lg:px-6 py-4 border-b border-white/10">
         <div className="mx-auto flex  items-center justify-between">
-          <div className="flex items-center gap-2 lg:gap-4">
-            <HiMenuAlt2 className="text-white w-7 h-7 cursor-pointer" onClick={() => setOpen(true)} />
+          <div className="flex items-center cursor-pointer gap-2 lg:gap-4">
+            <Logs size={24} className="text-white" onClick={() => setOpen(true)} />
             <div className="leading-tight">
               <p className="text-white font-semibold text-2xl">Ankit Bisen
                 <span className="text-purple-500 font-semibold text-4xl ">{" "}.</span>

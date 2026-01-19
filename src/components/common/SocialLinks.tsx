@@ -4,8 +4,8 @@ import { socialLinks } from '@/constants';
 import { SocialLinkProps } from '@/types/helper';
 
 const SocialLinks = ({ size, extraStyle }: { size: number, extraStyle?: string }) => {
-  return (
-     <React.Fragment>
+    return (
+        <React.Fragment>
             {socialLinks.map(({ name, url, icon: Icon }: SocialLinkProps) => (
                 <Link
                     key={name}
@@ -19,7 +19,7 @@ const SocialLinks = ({ size, extraStyle }: { size: number, extraStyle?: string }
                 </Link>
             ))}
         </React.Fragment>
-  )
+    )
 }
 
 export default SocialLinks;

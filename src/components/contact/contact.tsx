@@ -1,9 +1,8 @@
 'use client';
 
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin,Download, SendHorizonal  } from 'lucide-react';
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/button";
-import { Download, SendHorizonal } from 'lucide-react';
 import Card from "../common/Card";
 
 const Contact = () => {
