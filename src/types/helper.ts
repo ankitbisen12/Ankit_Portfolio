@@ -1,14 +1,15 @@
 import React from "react";
 
 export interface SidebarProps {
-  open: boolean;
-  setOpen: (value: boolean) => void;
+    open: boolean;
+    setOpen: (value: boolean | ((prevState: boolean) => boolean)) => void;
+    scrollToSection: (id: string) => void;
 }
 
 export interface NavLinksProps {
-  content: string;
-  href: string;
-  scrollToSection: (id: string) => void;
+    content: string;
+    href: string;
+    scrollToSection: (id: string) => void;
 }
 
 export interface SectionHeaderProps {
@@ -32,13 +33,13 @@ export interface projectProps {
 }
 
 export interface ButtonProps {
-  textColor: string;
-  content: string;
-  bgColor?: string;
-  icon?: React.ReactNode;
-  animation?: string;
-  extraStyle?: string;
-  onClick?: () => void;
+    textColor: string;
+    content: string;
+    bgColor?: string;
+    icon?: React.ReactNode;
+    animation?: string;
+    extraStyle?: string;
+    onClick?: () => void;
 }
 
 export interface SkillCardProps {
@@ -49,5 +50,5 @@ export interface SkillCardProps {
 
 export interface TagProps {
     content: string;
-    extraStyle?:string
+    extraStyle?: string
 }

@@ -7,7 +7,7 @@ import Card from "../common/Card";
 
 const Contact = () => {
     return (
-        <section className="bg-black flex items-center justify-center px-4 py-20">
+        <section className="bg-black flex items-center justify-center px-4 py-20" id='contact'>
             <div className="max-w-4xl w-full">
                 <SectionHeader title="Contact" subTitle="Get In Touch" />
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

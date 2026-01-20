@@ -3,8 +3,11 @@
 import { MoveRight } from 'lucide-react';
 import Button from "../common/button";
 import SocialLinks from "../common/SocialLinks";
+import { useScrollToSection } from "@/customHooks/useScrollToSection";
 
 const Intro = () => {
+     const { scrollToSection} = useScrollToSection();
+
     return (
         <section className="pt-20 bg-black flex items-center justify-center px-4 py-8 lg:min-h-screen lg:pt-0 ">
             <div className="max-w-7xl w-full">
@@ -35,8 +38,8 @@ const Intro = () => {
                         </p>
 
                         <div className="flex flex-row gap-2 justify-center">
-                            <Button bgColor="bg-purple-600" textColor="text-white" animation="shake-vertical" content="View My Work" onClick={()=>{}}/>
-                            <Button textColor="text-white" animation="shake-vertical" content="Contact Me" icon={<MoveRight size={16} />} extraStyle="border border-gray-600 flex items-center justify-center gap-2" onClick={()=>{}}/>
+                            <Button bgColor="bg-purple-600" textColor="text-white" animation="shake-vertical" content="View My Work" onClick={()=>scrollToSection('projects')}/>
+                            <Button textColor="text-white" animation="shake-vertical" content="Contact Me" icon={<MoveRight size={16} />} extraStyle="border border-gray-600 flex items-center justify-center gap-2" onClick={()=>scrollToSection('contact')}/>
                         </div>
 
                         <div className="flex gap-2 pt-2 justify-center">

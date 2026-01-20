@@ -10,7 +10,7 @@ const Experience = () => {
       id="experience"
       className={`relative bg-black py-8 px-2 sm:px-6 lg:px-8`}
     >
-      <SectionHeader title="experience" subTitle="Work History" />
+      <SectionHeader title="Experience" subTitle="Work History" />
       <div className="relative mx-auto max-w-4xl">
         <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-purple-500/40 via-purple-500/20 to-transparent" />
         <div className="space-y-10">
