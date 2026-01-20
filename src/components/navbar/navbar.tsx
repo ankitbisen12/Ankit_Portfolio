@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <nav className="w-full bg-black px-2 lg:px-6 py-4 border-b border-white/10">
+      <nav className="w-full bg-black px-2 lg:px-6 py-4 border-b border-gray-900">
         <div className="mx-auto flex  items-center justify-between">
           <div className="flex items-center cursor-pointer gap-2 lg:gap-4">
             <Logs size={24} className="text-white" onClick={() => setOpen(true)} />

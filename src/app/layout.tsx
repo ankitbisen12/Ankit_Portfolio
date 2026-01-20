@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { spaceGrotesk } from "../app/fonts";
+import Navbar from "@/components/navbar/navbar";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Ankit Portfolio",
@@ -23,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.className}>
       <body>
+        <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
