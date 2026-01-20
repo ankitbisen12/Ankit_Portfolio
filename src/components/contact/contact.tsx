@@ -1,11 +1,59 @@
 'use client';
 
-import { Mail, Linkedin,Download, SendHorizonal  } from 'lucide-react';
+import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { Mail, Linkedin, Download, SendHorizonal } from 'lucide-react';
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/button";
 import Card from "../common/Card";
+import { Loader } from 'lucide-react';
+import { toast } from "sonner";
+import { contactSchema } from "@/models/contactSchema";
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const Contact = () => {
+    const [loading, setLoading] = useState(false);
+    const { register, reset, handleSubmit, watch, formState: { errors }, } = useForm({
+        resolver: yupResolver(contactSchema),
+        defaultValues: {
+            name: '',
+            email: '',
+            message: '',
+        },
+    });
+
+    const formData = watch();
+
+    const onSubmit = async (formInput: any) => {
+        console.log("Form input is ", formInput);
+        setLoading(true);
+
+        const { name, email, message } = formInput;
+
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
+
+        console.log("Form data is ", formData);
+
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const data = await res.json();
+        if (data.status == 200) {
+            toast.success('Email sent successfully, I will get back to you soon!');
+            reset();
+        }
+        else {
+            toast.error('Something went wrong, please try again later!');
+        }
+        setLoading(false);
+    };
+
+
     return (
         <section className="bg-black flex items-center justify-center px-4 py-20" id='contact'>
             <div className="max-w-4xl w-full">
@@ -47,7 +95,7 @@ const Contact = () => {
                         <h3 className="text-xl font-semibold text-white mb-4">
                             Drop a Message
                         </h3>
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                             <div className="flex flex-col lg:flex-row gap-4">
                                 <div className="w-full lg:w-1/2">
                                     <label htmlFor="name" className="block text-gray-300 mb-2 font-semibold">
@@ -55,8 +103,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        id="name"
-                                        name="name"
+                                        {...register('name')}
                                         className="w-full px-4 py-2 bg-black/50 text-md border border-gray-700 rounded-lg text-white placeholder-gray-600 focus:outline-none"
                                         placeholder="Full Name"
                                     />
@@ -68,8 +115,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         type="email"
-                                        id="email"
-                                        name="email"
+                                        {...register('email')}
                                         className="w-full px-4 py-2 bg-black/50 text-md border border-gray-700 rounded-lg text-white placeholder-gray-600 focus:outline-none"
                                         placeholder="your.email@example.com"
                                     />
@@ -81,15 +127,13 @@ const Contact = () => {
                                     Message
                                 </label>
                                 <textarea
-                                    id="message"
-                                    name="message"
+                                    {...register('message')}
                                     rows={3}
                                     className="w-full px-4 py-2 bg-black/50 text-md border border-gray-700 rounded-lg text-white placeholder-gray-600 focus:outline-none"
                                     placeholder="Your message here..."
-                                    required
                                 />
                             </div>
-                            <Button bgColor="bg-purple-900" textColor="text-white" content="Send Message" extraStyle=" border border-gray-800 " icon={<SendHorizonal size={16} />} />
+                            <button className="w-full px-2 lg:px-8 py-2 bg-purple-900 text-white border border-gray-800 shake-vertical font-medium rounded-lg cursor-pointer flex items-center justify-center gap-2" type="submit">Send Message {loading ? <Loader size={16} /> : <SendHorizonal size={16} />}</button>
                         </form>
                     </div>
                 </div>

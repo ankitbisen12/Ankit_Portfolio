@@ -1,21 +1,21 @@
 'use client';
 
+import React from "react";
 import Intro from "./HeroSection/intro";
 import Skills from "./skills/skills";
 import Projects from "./projects/projects";
 import Experience from "./experience/experience";
 import Contact from "./contact/contact";
 
-
 const HomePage = () => {
     return (
-        <main>
+        <React.Fragment>
             <Intro />
             <Skills />
             <Projects />
             <Experience />
             <Contact />
-        </main>
+        </React.Fragment>
     )
 }
 

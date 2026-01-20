@@ -3,6 +3,7 @@ import "./globals.css";
 import { spaceGrotesk } from "../app/fonts";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Ankit Portfolio",
@@ -25,9 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.className}>
       <body>
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
+        <Toaster toastOptions={{
+          style: {
+            padding: '10px',
+          }
+        }} />
       </body>
     </html>
   );

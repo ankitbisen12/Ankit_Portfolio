@@ -6,7 +6,7 @@ import Sidebar from "./sidebar";
 import { useScrollToSection } from "@/customHooks/useScrollToSection";
 
 const Navbar = () => {
-  const { open, setOpen, scrollToSection } = useScrollToSection()
+  const { open, setOpen, scrollToSection } = useScrollToSection();
 
   return (
     <React.Fragment>

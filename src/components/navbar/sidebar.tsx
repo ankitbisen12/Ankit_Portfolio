@@ -17,7 +17,7 @@ const NavLinks = ({ content, href, scrollToSection}: NavLinksProps) => {
 
 const Sidebar = ({open,setOpen,scrollToSection}:SidebarProps) => {
 
-  console.log("Open state is ",open);
+  // console.log("Open state is ",open);
 
   return (
     <React.Fragment>
