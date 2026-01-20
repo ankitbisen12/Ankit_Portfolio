@@ -18,7 +18,7 @@ const NotFound = () => {
                         Page Not Found
                     </h2>
 
-                    <p className="text-md text-gray-400 mb-8 leading-relaxed">
+                    <p className="text-md text-gray-500 font-semibold mb-8 leading-tight">
                         Oops! The page you're looking for seems to have vanished into the digital void.
                         Let's get you back to safety.
                     </p>
