@@ -38,6 +38,7 @@ export interface ButtonProps {
   icon?: React.ReactNode;
   animation?: string;
   extraStyle?: string;
+  onClick?: () => void;
 }
 
 export interface SkillCardProps {
@@ -48,4 +49,5 @@ export interface SkillCardProps {
 
 export interface TagProps {
     content: string;
+    extraStyle?:string
 }

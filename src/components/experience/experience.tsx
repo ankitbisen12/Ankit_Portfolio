@@ -16,7 +16,6 @@ const Experience = () => {
         <div className="space-y-10">
           {companies.map((exp, index) => (
             <div key={index} className="relative pl-10 lg:pl-16">
-              <Tag content={exp.period} />
               <div className="relative rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 p-6 sm:p-8 shadow-lg border border-white/5">
                 <h3 className="text-xl font-semibold text-white">
                   {exp.role}
@@ -24,9 +23,7 @@ const Experience = () => {
                 <p className="mt-1 font-medium text-sm text-purple-400 mb-4">
                   @ {exp.name}
                 </p>
-                <span className="sm:absolute sm:right-6 sm:top-6 rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400 border border-purple-500/20 mt-10 lg:mt-3 sm:mt-0">
-                  {exp.period}
-                </span>
+                <Tag content={exp.period} extraStyle="sm:absolute sm:right-6 sm:top-6" />
               </div>
             </div>
           ))}

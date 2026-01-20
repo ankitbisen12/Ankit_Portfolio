@@ -35,8 +35,8 @@ const Intro = () => {
                         </p>
 
                         <div className="flex flex-row gap-2 justify-center">
-                            <Button bgColor="bg-purple-600" textColor="text-white" animation="shake-vertical" content="View My Work" />
-                            <Button textColor="text-white" animation="shake-vertical" content="Contact Me" icon={<MoveRight size={16} />} extraStyle="border border-gray-600 flex items-center justify-center gap-2" />
+                            <Button bgColor="bg-purple-600" textColor="text-white" animation="shake-vertical" content="View My Work" onClick={()=>{}}/>
+                            <Button textColor="text-white" animation="shake-vertical" content="Contact Me" icon={<MoveRight size={16} />} extraStyle="border border-gray-600 flex items-center justify-center gap-2" onClick={()=>{}}/>
                         </div>
 
                         <div className="flex gap-2 pt-2 justify-center">
