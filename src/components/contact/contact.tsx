@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import { Mail, Linkedin, Download, SendHorizonal } from 'lucide-react';
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/button";
@@ -25,7 +25,7 @@ const Contact = () => {
     const formData = watch();
 
     const onSubmit = async (formInput: any) => {
-        console.log("Form input is ", formInput);
+        // console.log("Form input is ", formInput);
         setLoading(true);
 
         const { name, email, message } = formInput;
@@ -35,7 +35,7 @@ const Contact = () => {
         formData.append('email', email);
         formData.append('message', message);
 
-        console.log("Form data is ", formData);
+        // console.log("Form data is ", formData);
 
         const res = await fetch('/api/contact', {
             method: 'POST',
@@ -43,8 +43,10 @@ const Contact = () => {
         });
 
         const data = await res.json();
+
+        // console.log("Response data is ", data);
         if (data.status == 200) {
-            toast.success('Email sent successfully, I will get back to you soon!');
+            toast.success('Message sent successfully, I will get back to you soon!');
             reset();
         }
         else {
