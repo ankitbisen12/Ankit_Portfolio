@@ -7,6 +7,8 @@ import { projectProps } from "@/types/helper";
 import { projects } from "@/constants";
 import SectionHeader from "../common/SectionHeader";
 import Tag from "../common/tag";
+import { slideFromRight } from "@/lib/motionVariants";
+import MotionWrapper from "../common/MotionWrapper";
 
 const ProjectCard = ({ project }: { project: projectProps }) => {
     return (
@@ -60,14 +62,16 @@ const ProjectCard = ({ project }: { project: projectProps }) => {
 const Projects = () => {
     return (
         <section className="bg-black py-20" id='projects'>
-            <div className="mx-auto max-w-7xl px-6">
-                <SectionHeader title="Projects" subTitle="Featured Projects" />
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project) => (
-                        <ProjectCard key={project.name} project={project} />
-                    ))}
+            <MotionWrapper slideEffect={slideFromRight}>
+                <div className="mx-auto max-w-7xl px-6">
+                    <SectionHeader title="Projects" subTitle="Featured Projects" />
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {projects.map((project) => (
+                            <ProjectCard key={project.name} project={project} />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </MotionWrapper>
         </section>
     );
 };
