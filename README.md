@@ -1,4 +1,4 @@
-# Ankit's Portfolio
+# Portfolio
 
 A modern, responsive portfolio website built with Next.js and TypeScript, featuring smooth animations and a contact form with email functionality.
 
