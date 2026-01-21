@@ -9,8 +9,7 @@ import { Mail, Linkedin, Download, SendHorizonal, Loader } from 'lucide-react';
 import SectionHeader from "../common/SectionHeader";
 import Button from "../common/button";
 import Card from "../common/Card";
-import MotionWrapper from "../common/MotionWrapper";
-import { slideFromRight } from "../../lib/motionVariants";
+
 
 const Contact = () => {
     const [loading, setLoading] = useState(false);
@@ -56,10 +55,18 @@ const Contact = () => {
         setLoading(false);
     };
 
+    const downloadResume = () => {
+        const link = document.createElement('a');
+        link.href = '/assets/resume.pdf';
+        link.download = 'Ankit_Bisen_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
 
     return (
         <section className="bg-black flex items-center justify-center px-4 py-20" id='contact'>
-            <MotionWrapper slideEffect={slideFromRight}>
                 <div className="max-w-4xl w-full">
                     <SectionHeader title="Contact" subTitle="Get In Touch" />
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -91,7 +98,7 @@ const Contact = () => {
                                 <p className="text-sm text-gray-400 mb-6 leading-tight font-semibold">
                                     I'm currently available for freelance projects and open to full-time opportunities.
                                 </p>
-                                <Button bgColor="border border-purple-600" textColor="text-white" content="Download Resume" icon={<Download size={18} />} />
+                                <Button bgColor="border border-purple-600" textColor="text-white" content="Download Resume" icon={<Download size={18} />} onClick={downloadResume} />
                             </Card>
                         </div>
 
@@ -102,7 +109,7 @@ const Contact = () => {
                             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                                 <div className="flex flex-col lg:flex-row gap-4">
                                     <div className="w-full lg:w-1/2">
-                                        <label htmlFor="name" className="block text-gray-300 mb-2 font-semibold">
+                                        <label className="block text-gray-300 mb-2 font-semibold">
                                             Name
                                         </label>
                                         <input
@@ -110,11 +117,12 @@ const Contact = () => {
                                             {...register('name')}
                                             className="w-full px-4 py-2 bg-black/50 text-md border border-gray-700 rounded-lg text-white placeholder-gray-600 focus:outline-none"
                                             placeholder="Full Name"
+                                            autoComplete="off"
                                         />
                                     </div>
 
                                     <div className="w-full lg:w-1/2">
-                                        <label htmlFor="email" className="block text-gray-300 mb-2 font-semibold">
+                                        <label  className="block text-gray-300 mb-2 font-semibold">
                                             Email
                                         </label>
                                         <input
@@ -122,12 +130,13 @@ const Contact = () => {
                                             {...register('email')}
                                             className="w-full px-4 py-2 bg-black/50 text-md border border-gray-700 rounded-lg text-white placeholder-gray-600 focus:outline-none"
                                             placeholder="your.email@example.com"
+                                            autoComplete="off"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-gray-300 mb-2">
+                                    <label  className="block text-gray-300 mb-2">
                                         Message
                                     </label>
                                     <textarea
@@ -135,6 +144,7 @@ const Contact = () => {
                                         rows={3}
                                         className="w-full px-4 py-2 bg-black/50 text-md border border-gray-700 rounded-lg text-white placeholder-gray-600 focus:outline-none"
                                         placeholder="Your message here..."
+                                        autoComplete="off"
                                     />
                                 </div>
                                 <button className="w-full px-2 lg:px-8 py-2 bg-purple-900 text-white border border-gray-800 shake-vertical font-medium rounded-lg cursor-pointer flex items-center justify-center gap-2" type="submit">Send Message {loading ? <Loader size={16} /> : <SendHorizonal size={16} />}</button>
@@ -142,7 +152,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </MotionWrapper>
+
         </section>
     );
 };

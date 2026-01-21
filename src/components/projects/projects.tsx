@@ -62,7 +62,6 @@ const ProjectCard = ({ project }: { project: projectProps }) => {
 const Projects = () => {
     return (
         <section className="bg-black py-20" id='projects'>
-            <MotionWrapper slideEffect={slideFromRight}>
                 <div className="mx-auto max-w-7xl px-6">
                     <SectionHeader title="Projects" subTitle="Featured Projects" />
                     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -71,7 +70,6 @@ const Projects = () => {
                         ))}
                     </div>
                 </div>
-            </MotionWrapper>
         </section>
     );
 };
