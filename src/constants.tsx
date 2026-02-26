@@ -7,6 +7,7 @@ export const skills = {
     backend: ['Node.js', 'Express.js', 'MongoDB'],
     languages: ['C++', 'Python', 'Javascript', 'SQL'],
     tools: ['Git', 'Postman'],
+    DataEngineering: [ 'Apache Spark', 'Databricks']
 }
 
 export const companies = [
