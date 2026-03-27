@@ -2,16 +2,8 @@ import kpitLogo from '../public/assets/KPIT_Technologies_Logo.png';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import npmLogo from '../public/assets/npmLogo.png';
 
-export const skills = {
-    frontend: ['Javascript', 'React.js', 'Next.js', 'Redux', 'Tailwind CSS'],
-    backend: ['Node.js', 'Express.js', 'MongoDB'],
-    languages: ['C++', 'Python', 'Javascript', 'SQL'],
-    tools: ['Git', 'Postman'],
-    DataEngineering: ['Apache Spark', 'Databricks']
-}
 
-
-export const skill= {
+export const skills= {
     languages: ['Python', 'SQL', 'JavaScript', 'C++'],
     'Big Data Technologies': ['Apache Spark', 'PySpark', 'Spark SQL'],
     'Cloud computing': ['Azure Data Factory (ADF)', 'ADLS', 'Azure Synapse', 'Databricks', 'AWS S3'],
