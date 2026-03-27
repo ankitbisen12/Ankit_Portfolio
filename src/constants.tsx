@@ -1,6 +1,8 @@
 import kpitLogo from '../public/assets/KPIT_Technologies_Logo.png';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import npmLogo from '../public/assets/npmLogo.png';
+import FMCGLogo from '../public/assets/FMCG_img.png';
+import ENDLogo from '../public/assets/azure_data_pipeline_light_bold.svg';
 
 
 export const skills= {
@@ -25,8 +27,8 @@ export const socialLinks = [
 
 export const projects = [
     { name: "NPM Package", description: "A lightweight and efficient Node.js utility to delete or comment all console statements in JavaScript and TypeScript projects.", link: "https://github.com/ankitbisen12/console-purge", preview: "https://www.npmjs.com/package/console_purge", path: npmLogo, skills: ['babel-parser', 'AST', 'Javascript'] },
-    { name: "Ecommerce website", description: "A dynamic e-commerce web application using React.js on the frontend and Node.js on the backend,enabling smooth and interactive user experiences.", link: "https://github.com/ankitbisen12/Ecommerce-Backend", preview: "https://github.com/ankitbisen12/Ecommerce-Backend", path: npmLogo, skills: ['Javascript', 'React.js', 'Node.js', 'MongoDB', 'RESTAPI', 'JWT'] },
-    { name: "ML models", description: "ML models (Linear Regression, XGBoost, Decision Tree) to predict health insurance premiums andCredit Risk Score", link: "https://github.com/ankitbisen12/Machine_Learning_Models", preview: "https://github.com/ankitbisen12/Machine_Learning_Models", path: npmLogo, skills: ['Python', 'ML', 'scikit-learn'] }
+    { name: "SportsBar Data Pipeline", description: "The SportsBar Data Pipeline demonstrates an end-to-end modern data engineering solution featuring.This project reflects production-grade implementation of Databricks + Spark + AWS S3 within a Medallion framework", link: "https://github.com/ankitbisen12/FMCG_Data_Engg", preview: "https://dbc-7e34c2e8-cb45.cloud.databricks.com/dashboardsv3/01f111ae928a1e6c84361d0fd9b4a53e/published?o=7474655592935296", path: FMCGLogo, skills: ['Databricks', 'Python', 'PySpark', 'AWS S3', 'SQL'] },
+    { name: "End-to-End Data Lakehouse Pipeline", description: "This project demonstrates a **production-grade data engineering pipeline** that ingests data from AWS S3, processes it using Azure Data Factory (ADF) and Azure Databricks, and loads it into Azure Synapse Analytics for analytics and reporting.", link: "https://github.com/ankitbisen12/End-to-End-Data-Lakehouse-Pipeline", preview: "https://github.com/ankitbisen12/End-to-End-Data-Lakehouse-Pipeline", path: ENDLogo, skills: ['ADF', 'ADLS','Azure Synape', 'PySpark','SQL'] }
 ];
 
 
