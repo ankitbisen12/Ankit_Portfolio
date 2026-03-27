@@ -2,6 +2,7 @@ import { SkillCardProps } from "../../types/helper";
 import Card from "../common/Card";
 
 const SkillCard = ({ title, skills }: SkillCardProps) => {
+    console.log("skills",skills);
     return (
         <Card bgColor="bg-gray-900">
             <h3 className="text-2xl font-semibold text-white mb-6">

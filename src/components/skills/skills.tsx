@@ -14,10 +14,12 @@ const Skills = () => {
                 <div className="max-w-6xl w-full">
                     <SectionHeader title="SKILLS & TECHNOLOGIES" subTitle="My Expertise" />
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <SkillCard title="Frontend" skills={skills.frontend} />
-                        <SkillCard title="Backend" skills={skills.backend} />
                         <SkillCard title="Languages" skills={skills.languages} />
-                        <SkillCard title="Tools" skills={skills.tools} />
+                        <SkillCard title="Big Data Technologies" skills={skills.BigDataTechnologies} />
+                        <SkillCard title="Cloud Computing" skills={skills.Cloudcomputing} />
+                        <SkillCard title="Data Engineering Tools" skills={skills.DataEngineeringTools} />
+                        <SkillCard title="Orchestration" skills={skills.Orchestration} />
+                        <SkillCard title="Other" skills={skills.Other} />
                     </div>
                 </div>
             </MotionWrapper>

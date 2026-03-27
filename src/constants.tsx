@@ -5,10 +5,10 @@ import npmLogo from '../public/assets/npmLogo.png';
 
 export const skills= {
     languages: ['Python', 'SQL', 'JavaScript', 'C++'],
-    'Big Data Technologies': ['Apache Spark', 'PySpark', 'Spark SQL'],
-    'Cloud computing': ['Azure Data Factory (ADF)', 'ADLS', 'Azure Synapse', 'Databricks', 'AWS S3'],
-    'Data Engineering Tools': ['Data Modelling', 'ETL/ELT Pipelines'],
-    'Orchestration': ['Apache Airflow'],
+    BigDataTechnologies: ['Apache Spark', 'PySpark', 'Spark SQL'],
+    Cloudcomputing: ['Azure Data Factory (ADF)', 'ADLS', 'Azure Synapse', 'Databricks', 'AWS S3'],
+    DataEngineeringTools: ['Data Modelling', 'ETL/ELT Pipelines'],
+    Orchestration: ['Apache Airflow'],
     Other: ['Git', 'Postman', 'Docker', 'REST API', 'React.js', 'Next.js','Node.js'],
 }
 
