@@ -7,7 +7,17 @@ export const skills = {
     backend: ['Node.js', 'Express.js', 'MongoDB'],
     languages: ['C++', 'Python', 'Javascript', 'SQL'],
     tools: ['Git', 'Postman'],
-    DataEngineering: [ 'Apache Spark', 'Databricks']
+    DataEngineering: ['Apache Spark', 'Databricks']
+}
+
+
+export const skill= {
+    languages: ['Python', 'SQL', 'JavaScript', 'C++'],
+    'Big Data Technologies': ['Apache Spark', 'PySpark', 'Spark SQL'],
+    'Cloud computing': ['Azure Data Factory (ADF)', 'ADLS', 'Azure Synapse', 'Databricks', 'AWS S3'],
+    'Data Engineering Tools': ['Data Modelling', 'ETL/ELT Pipelines'],
+    'Orchestration': ['Apache Airflow'],
+    Other: ['Git', 'Postman', 'Docker', 'REST API', 'React.js', 'Next.js','Node.js'],
 }
 
 export const companies = [
