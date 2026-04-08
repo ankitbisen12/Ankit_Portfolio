@@ -29,12 +29,12 @@ const Intro = () => {
                                 Ankit
                             </span>.
                             <br />
-                            Software Developer.
+                            Associate Engineer.
                         </p>
 
                         <p className="text-xl lg:text-lg text-gray-500 font-bold">
-                            I've been working as a Software developer for{' '}
-                            <span className="text-purple-500">1 years</span>.
+                            I've been working as an Associate Engineer for{' '}
+                            <span className="text-purple-500">1.7 years</span>.
                         </p>
 
                         <div className="flex flex-row gap-2 justify-center">
