@@ -16,7 +16,7 @@ export const skills= {
 
 export const companies = [
     { name: "KPIT Technologies", logo: kpitLogo, link: 'https://www.kpit.com/', role: 'Associate Engineer', current: true, period: '2024- Present' },
-    { name: "KPIT Technologies", logo: kpitLogo, link: 'https://www.kpit.com/', role: 'Engineering Trainee', current: true, period: '2023-2024' },
+    { name: "KPIT Technologies", logo: kpitLogo, link: 'https://www.kpit.com/', role: 'Trainee', current: true, period: '2023-2024' },
 ];
 
 export const socialLinks = [

@@ -34,7 +34,7 @@ const Intro = () => {
 
                         <p className="text-xl lg:text-lg text-gray-500 font-bold">
                             I've been working as an Associate Engineer for{' '}
-                            <span className="text-purple-500">1.7 years</span>.
+                            <span className="text-purple-500">2+ years</span>.
                         </p>
 
                         <div className="flex flex-row gap-2 justify-center">
