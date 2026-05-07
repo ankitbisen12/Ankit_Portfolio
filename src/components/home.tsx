@@ -12,8 +12,8 @@ const HomePage = () => {
         <React.Fragment>
             <Intro />
             <Skills />
-            <Projects />
             <Experience />
+            <Projects />
             <Contact />
         </React.Fragment>
     )
