@@ -1,0 +1,175 @@
+<svg width="1280" height="920" viewBox="0 0 1280 920" role="img" aria-labelledby="title desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Pfizer Pharma Data Pipeline Architecture</title>
+  <desc id="desc">Project-specific Databricks and Delta Lake medallion architecture for clinical trials, manufacturing, quality control, and holiday-controlled execution.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#394150"/>
+    </marker>
+    <style>
+      .bg { fill: #f7f4ee; }
+      .title { font: 700 30px Arial, Helvetica, sans-serif; fill: #18212f; }
+      .subtitle { font: 400 15px Arial, Helvetica, sans-serif; fill: #556070; }
+      .band-title { font: 700 17px Arial, Helvetica, sans-serif; fill: #18212f; }
+      .band-note { font: 400 12px Arial, Helvetica, sans-serif; fill: #687386; }
+      .box-title { font: 700 14px Arial, Helvetica, sans-serif; fill: #172033; }
+      .box-text { font: 400 12px Arial, Helvetica, sans-serif; fill: #3d4757; }
+      .small { font: 400 11px Arial, Helvetica, sans-serif; fill: #566171; }
+      .pill { font: 700 11px Arial, Helvetica, sans-serif; fill: #ffffff; }
+      .line { fill: none; stroke: #394150; stroke-width: 2; marker-end: url(#arrow); }
+      .soft-line { fill: none; stroke: #697386; stroke-width: 1.6; stroke-dasharray: 5 5; marker-end: url(#arrow); }
+      .panel { fill: #ffffff; stroke: #d8d2c6; stroke-width: 1.3; rx: 8; }
+      .source { fill: #e8f2f0; stroke: #7aa69e; }
+      .job { fill: #eef0fb; stroke: #8b90c9; }
+      .bronze { fill: #f8eee1; stroke: #c68b50; }
+      .silver { fill: #eef1f5; stroke: #96a1af; }
+      .gold { fill: #fff4cf; stroke: #d6ae32; }
+      .consume { fill: #edf5e8; stroke: #86a86f; }
+      .guard { fill: #f9e7e5; stroke: #c97970; }
+      .storage { fill: #e9f1fb; stroke: #7098c7; }
+      .shadow { filter: drop-shadow(0 2px 3px rgba(35, 38, 43, .12)); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="920"/>
+  <text class="title" x="44" y="54">Pfizer Pharma Data Pipeline Architecture</text>
+  <text class="subtitle" x="44" y="80">Databricks Jobs orchestrate Spark notebooks that ingest CSV data from S3 into Delta Lake bronze, silver, and gold layers.</text>
+
+  <rect class="panel shadow" x="40" y="112" width="280" height="726"/>
+  <text class="band-title" x="64" y="145">Source and Configuration</text>
+  <text class="band-note" x="64" y="166">S3 paths are resolved through Databricks secret scope: bucket</text>
+
+  <rect class="source shadow" x="64" y="196" width="232" height="76" rx="8"/>
+  <text class="box-title" x="84" y="223">Clinical Trial CSV</text>
+  <text class="box-text" x="84" y="245">LB lab results, VS vital signs,</text>
+  <text class="box-text" x="84" y="263">DM demographics</text>
+
+  <rect class="source shadow" x="64" y="294" width="232" height="76" rx="8"/>
+  <text class="box-title" x="84" y="321">Manufacturing CSV</text>
+  <text class="box-text" x="84" y="343">Equipment lot, deviations,</text>
+  <text class="box-text" x="84" y="361">manufacturing lot and orders</text>
+
+  <rect class="source shadow" x="64" y="392" width="232" height="76" rx="8"/>
+  <text class="box-title" x="84" y="419">Quality Control CSV</text>
+  <text class="box-text" x="84" y="441">QC lab results with batch, lot,</text>
+  <text class="box-text" x="84" y="459">test, analyst, and result flags</text>
+
+  <rect class="guard shadow" x="64" y="514" width="232" height="94" rx="8"/>
+  <text class="box-title" x="84" y="541">Holiday Lookup</text>
+  <text class="box-text" x="84" y="563">dataset/schedule_holidays.csv</text>
+  <text class="box-text" x="84" y="583">conditional_holiday notebooks</text>
+  <text class="small" x="84" y="601">Outputs RUN_MAIN or SKIP</text>
+
+  <rect class="storage shadow" x="64" y="654" width="232" height="88" rx="8"/>
+  <text class="box-title" x="84" y="681">Databricks Setup</text>
+  <text class="box-text" x="84" y="703">Catalog: pfizer</text>
+  <text class="box-text" x="84" y="721">Schemas: bronze, silver, gold</text>
+
+  <rect class="panel shadow" x="354" y="112" width="856" height="154"/>
+  <text class="band-title" x="378" y="145">Orchestration Layer</text>
+  <text class="band-note" x="378" y="166">Databricks bundle YAML job definitions and notebook task dependencies</text>
+
+  <rect class="job shadow" x="382" y="190" width="258" height="54" rx="8"/>
+  <text class="box-title" x="402" y="214">Pfizer_Lookup_Pipeline</text>
+  <text class="box-text" x="402" y="234">get_run_day -> check_holiday</text>
+
+  <rect class="job shadow" x="696" y="190" width="258" height="54" rx="8"/>
+  <text class="box-title" x="716" y="214">Clinical Trail Pipeline</text>
+  <text class="box-text" x="716" y="234">LB, VS, DM bronze/silver -> gold</text>
+
+  <rect class="job shadow" x="982" y="190" width="196" height="54" rx="8"/>
+  <text class="box-title" x="1002" y="214">Notebook Jobs</text>
+  <text class="box-text" x="1002" y="234">Manufacturing and QC transforms</text>
+
+  <path class="soft-line" d="M296 561 C338 560 350 218 382 218"/>
+  <path class="soft-line" d="M640 218 C664 218 672 218 696 218"/>
+
+  <rect class="panel shadow" x="354" y="300" width="258" height="388"/>
+  <text class="band-title" x="378" y="333">Bronze Layer</text>
+  <text class="band-note" x="378" y="354">Raw Auto Loader streams to Delta</text>
+
+  <rect class="bronze shadow" x="382" y="382" width="202" height="58" rx="8"/>
+  <text class="box-title" x="402" y="405">clinical_trials_LB</text>
+  <text class="box-text" x="402" y="426">CSV, schema evolution, __file</text>
+
+  <rect class="bronze shadow" x="382" y="458" width="202" height="58" rx="8"/>
+  <text class="box-title" x="402" y="481">clinical_trials_VS</text>
+  <text class="box-text" x="402" y="502">CSV, schema evolution, __file</text>
+
+  <rect class="bronze shadow" x="382" y="534" width="202" height="58" rx="8"/>
+  <text class="box-title" x="402" y="557">clinical_trials_DM</text>
+  <text class="box-text" x="402" y="578">CSV, schema evolution, __file</text>
+
+  <rect class="bronze shadow" x="382" y="610" width="202" height="58" rx="8"/>
+  <text class="box-title" x="402" y="633">mfg and QC bronze</text>
+  <text class="box-text" x="402" y="654">orders, lots, equipment, QC</text>
+
+  <rect class="panel shadow" x="654" y="300" width="258" height="388"/>
+  <text class="band-title" x="678" y="333">Silver Layer</text>
+  <text class="band-note" x="678" y="354">Validation, standardization, joins-ready Delta</text>
+
+  <rect class="silver shadow" x="682" y="382" width="202" height="58" rx="8"/>
+  <text class="box-title" x="702" y="405">LB silver</text>
+  <text class="box-text" x="702" y="426">Reference range checks</text>
+
+  <rect class="silver shadow" x="682" y="458" width="202" height="58" rx="8"/>
+  <text class="box-title" x="702" y="481">VS silver</text>
+  <text class="box-text" x="702" y="502">Vitals categories and dates</text>
+
+  <rect class="silver shadow" x="682" y="534" width="202" height="58" rx="8"/>
+  <text class="box-title" x="702" y="557">DM silver</text>
+  <text class="box-text" x="702" y="578">Demographic cleanup</text>
+
+  <rect class="silver shadow" x="682" y="610" width="202" height="58" rx="8"/>
+  <text class="box-title" x="702" y="633">MFG and QC silver</text>
+  <text class="box-text" x="702" y="654">Null flags, status normalization</text>
+
+  <rect class="panel shadow" x="954" y="300" width="256" height="388"/>
+  <text class="band-title" x="978" y="333">Gold Layer</text>
+  <text class="band-note" x="978" y="354">Business summaries and analytics tables</text>
+
+  <rect class="gold shadow" x="982" y="392" width="202" height="74" rx="8"/>
+  <text class="box-title" x="1002" y="417">Clinical safety marts</text>
+  <text class="box-text" x="1002" y="439">gold_subject</text>
+  <text class="box-text" x="1002" y="457">gold_demo_safety</text>
+
+  <rect class="gold shadow" x="982" y="506" width="202" height="94" rx="8"/>
+  <text class="box-title" x="1002" y="530">QC analytics marts</text>
+  <text class="box-text" x="1002" y="552">qc_summary, qc_trend</text>
+  <text class="box-text" x="1002" y="570">qc_batch_quality</text>
+  <text class="box-text" x="1002" y="588">qc_analyst</text>
+
+  <path class="line" d="M296 232 C324 232 340 411 382 411"/>
+  <path class="line" d="M296 232 C324 232 340 487 382 487"/>
+  <path class="line" d="M296 232 C324 232 340 563 382 563"/>
+  <path class="line" d="M296 332 C326 332 340 639 382 639"/>
+  <path class="line" d="M296 430 C326 430 340 639 382 639"/>
+
+  <path class="line" d="M584 411 C628 411 638 411 682 411"/>
+  <path class="line" d="M584 487 C628 487 638 487 682 487"/>
+  <path class="line" d="M584 563 C628 563 638 563 682 563"/>
+  <path class="line" d="M584 639 C628 639 638 639 682 639"/>
+
+  <path class="line" d="M884 411 C928 411 938 429 982 429"/>
+  <path class="line" d="M884 487 C928 487 938 429 982 429"/>
+  <path class="line" d="M884 563 C928 563 938 429 982 429"/>
+  <path class="line" d="M884 639 C928 639 938 553 982 553"/>
+
+  <rect class="storage shadow" x="354" y="724" width="856" height="64" rx="8"/>
+  <text class="box-title" x="378" y="748">Delta Lake on S3</text>
+  <text class="box-text" x="378" y="770">s3://pfizerbucket01/processed_data/{bronze,silver,gold}/ with checkpoints, schema locations, and Change Data Feed where enabled</text>
+
+  <path class="soft-line" d="M483 668 C490 692 520 704 600 724"/>
+  <path class="soft-line" d="M783 668 C790 692 810 704 870 724"/>
+  <path class="soft-line" d="M1083 600 C1086 646 1058 696 1016 724"/>
+
+  <rect class="panel shadow" x="354" y="820" width="856" height="70"/>
+  <text class="band-title" x="378" y="846">Consumption and Verification</text>
+  <rect class="consume" x="378" y="860" width="176" height="20" rx="8"/>
+  <text class="pill" x="466" y="874" text-anchor="middle">result/*.png dashboards</text>
+  <rect class="consume" x="572" y="860" width="174" height="20" rx="8"/>
+  <text class="pill" x="659" y="874" text-anchor="middle">Databricks display()</text>
+  <rect class="consume" x="764" y="860" width="174" height="20" rx="8"/>
+  <text class="pill" x="851" y="874" text-anchor="middle">pytest holiday checks</text>
+  <rect class="consume" x="956" y="860" width="198" height="20" rx="8"/>
+  <text class="pill" x="1055" y="874" text-anchor="middle">business analytics tables</text>
+</svg>
