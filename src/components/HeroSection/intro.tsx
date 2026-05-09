@@ -16,7 +16,7 @@ const Intro = () => {
                         <div className="absolute inset-0 rounded-full border-2 border-dashed border-gray-500 scale-120 animate-slow-spin"></div>
                         <div className="relative w-40 h-40 rounded-full overflow-hidden">
                             <img
-                                src="/Profile_image.jpg"
+                                src="/Profile_image.jpeg"
                                 alt="Ankit"
                                 className="w-full h-full object-cover"
                             />
