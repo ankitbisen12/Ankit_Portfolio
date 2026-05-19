@@ -34,7 +34,7 @@ export const companies = [
     name: "KPIT Technologies",
     logo: kpitLogo,
     link: "https://www.kpit.com/",
-    role: "Associate Engineer",
+    role: "Associate Data Engineer",
     current: true,
     period: "2024- Present",
   },
