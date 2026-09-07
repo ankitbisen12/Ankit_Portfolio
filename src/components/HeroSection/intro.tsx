@@ -29,11 +29,11 @@ const Intro = () => {
                                 Ankit
                             </span>.
                             <br />
-                            Associate Data Engineer.
+                            Data Engineer.
                         </p>
 
                         <p className="text-xl lg:text-lg text-gray-500 font-bold">
-                            I've been working as an Associate Data Engineer for{' '}
+                            I've been working as a Data Engineer for{' '}
                             <span className="text-purple-500">2+ years</span>.
                         </p>
 

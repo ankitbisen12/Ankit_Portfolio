@@ -7,7 +7,7 @@ import Project1Img from "../public/assets/architecture.svg";
 import Project3Img from "../public/assets/Project3Img.png";
 
 export const skills = {
-  languages: ["Python", "SQL", "JavaScript", "C++"],
+  languages: ["Python", "SQL", "JavaScript", ],
   BigDataTechnologies: ["Apache Spark", "PySpark", "Spark SQL"],
   Cloudcomputing: [
     "Azure Data Factory (ADF)",
@@ -34,9 +34,17 @@ export const companies = [
     name: "KPIT Technologies",
     logo: kpitLogo,
     link: "https://www.kpit.com/",
-    role: "Associate Data Engineer",
+    role: " Engineer",
     current: true,
-    period: "2024- Present",
+    period: "July 2026- Present",
+  },
+  {
+    name: "KPIT Technologies",
+    logo: kpitLogo,
+    link: "https://www.kpit.com/",
+    role: "Associate Engineer",
+    current: true,
+    period: "Aug 2024 - June 2026",
   },
   {
     name: "KPIT Technologies",
