@@ -29,7 +29,7 @@ export interface projectProps {
     link: string;
     preview: string;
     skills: string[];
-    path: unknown;
+    path: any;
 }
 
 export interface ButtonProps {
