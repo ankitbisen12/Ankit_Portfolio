@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-// TypeScript may not have declarations for CSS side-effect imports in some setups.
-// @ts-expect-error CSS is processed by Next.js at build time.
 import "./globals.css";
 import { spaceGrotesk } from "../app/fonts";
 import Navbar from "@/components/navbar/navbar";
