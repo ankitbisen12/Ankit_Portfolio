@@ -1,17 +1,19 @@
 import { NextRequest } from 'next/server';
 import transporter from '@/lib/mailer';
 
-export async function POST(request: NextRequest, res: any) {
+export async function POST(request: NextRequest) {
     const data = await request.formData();
     // console.log("Reached API endpoint - Form data is ", data);
 
-    const inquiryData: any = {};
+    const inquiryData: Record<string, FormDataEntryValue | null> = {};
 
     for (const key of data.keys()) {
         inquiryData[key] = data.get(key);
     }
 
-    const { name, email, message } = inquiryData;
+    const name = String(inquiryData.name ?? '');
+    const email = String(inquiryData.email ?? '');
+    const message = String(inquiryData.message ?? '');
 
     const mailOptions = {
         from: email,
