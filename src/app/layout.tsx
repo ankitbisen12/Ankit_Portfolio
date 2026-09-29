@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 import { Toaster } from "sonner";
 import AnkitGPT from "@/components/AnkitGPT";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Ankit Portfolio",
@@ -36,6 +37,7 @@ export default function RootLayout({
           }
         }} />
         <AnkitGPT/>
+        <Analytics />
       </body>
     </html>
   );
